@@ -44,7 +44,7 @@ rec {
     buildDepends = [];
   };
   idris-config = mkDerivation rec {
-    pname = "idris-config";
+    pname = "config";
     version = "df7efeccd2137d508f1082f10715dbbae19d1407";
     src = fetchFromGitHub {
       owner = "puffnfresh";
