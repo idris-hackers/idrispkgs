@@ -8,14 +8,22 @@ let
   libraryDirectory = "${idris_plain.system}-ghc-${idris_plain.ghc.version}/${idris_plain.fname}";
 in
 rec {
-  mkDerivation = { pname, version, buildDepends, src }: stdenv.mkDerivation {
-    name = "${pname}-${version}";
-    inherit src;
-    buildInputs = [ (idrisWithPackages buildDepends) ];
-    preConfigure = ''
-      export TARGET="$out"
-    '';
-  };
+  mkDerivation = { pname, version, buildDepends, src, buildInputs ? [] }:
+    let wrappedIdris = idrisWithPackages buildDepends;
+    in stdenv.mkDerivation {
+      name = "${pname}-${version}";
+      inherit src buildInputs;
+      dontUseCmakeConfigure = true;
+      LANG = "en_US.UTF-8";
+      LOCALE_ARCHIVE = "${glibcLocales}/lib/locale/locale-archive";
+      buildPhase = ''
+        export TARGET="$out"
+        ${wrappedIdris}/bin/idris --build ${pname}.ipkg
+      '';
+      installPhase = ''
+        ${wrappedIdris}/bin/idris --install ${pname}.ipkg
+      '';
+    };
 
   idrisWithPackages = pkgs: callPackage ./idris_plain/wrapper.nix {
     idris_plain = idris_plain;
@@ -45,5 +53,16 @@ rec {
       sha256 = "07i3g2gz1z9dasyd7lllwwflvpqhwqln49f37csbr4z9acpl5ln2";
     };
     buildDepends = [ lightyear ];
+  };
+  quantities = mkDerivation rec {
+    pname = "quantities";
+    version = "f0e3cbb010843c7c46768953328579c7e62330be";
+    src = fetchFromGitHub {
+      owner = "timjb";
+      repo = "quantities";
+      rev = version;
+      sha256 = "1rz259mln5387akcbv5fgss69fiaiihgk9ja4k6s1w8dhsfza6bl";
+    };
+    buildDepends = [ ];
   };
 }
