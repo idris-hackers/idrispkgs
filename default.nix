@@ -34,12 +34,12 @@ rec {
 
   lightyear = mkDerivation rec {
     pname = "lightyear";
-    version = "7e7faf0eadc06ba3805582bd27f6a8fd0028f896";
+    version = "e0b3e883f833c1114effc837a086b0ab9c6c44eb";
     src = fetchFromGitHub {
-      owner = "puffnfresh";
+      owner = "jfdm";
       repo = "lightyear";
       rev = version;
-      sha256 = "169xar8sc575riqzh86mp2qfpsxs7x2xw0llgkkp1054gpdkzp2b";
+      sha256 = "1636xzzvd84p7s9b6ikd6pl122v8sb7z8ivn42546px8763l0rkw";
     };
     buildDepends = [];
   };
