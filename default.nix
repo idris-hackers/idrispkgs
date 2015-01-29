@@ -43,14 +43,24 @@ rec {
     };
     buildDepends = [];
   };
+  idris-commonmark = mkDerivation rec {
+    pname = "commonmark";
+    version = "e9c27048765bbe56ebeb37df0df18ad2ab42ecaf";
+    src = fetchgit {
+      url = "https://github.com/puffnfresh/idris-commonmark.git";
+      sha256 = "0mqg8idaqp2xpnjkz81vxkmqq7vrvpqla86gdanpr6i7n11xnm41";
+    };
+    buildInputs = [ re2c ];
+    buildDepends = [ ];
+  };
   idris-config = mkDerivation rec {
     pname = "config";
-    version = "df7efeccd2137d508f1082f10715dbbae19d1407";
+    version = "763567ad095f720fb905ff2aa4598470ef2b741b";
     src = fetchFromGitHub {
-      owner = "puffnfresh";
+      owner = "jfdm";
       repo = "idris-config";
       rev = version;
-      sha256 = "07i3g2gz1z9dasyd7lllwwflvpqhwqln49f37csbr4z9acpl5ln2";
+      sha256 = "1sa0wrkm769sw25vqq7b3xnrq6irzr9387hhh4dlfjn1kg03nah5";
     };
     buildDepends = [ lightyear ];
   };
