@@ -45,11 +45,11 @@ rec {
   };
   idris-commonmark = mkDerivation rec {
     pname = "commonmark";
-    version = "7c05b3e6e2c602a189bf4b6486d4059511acba60";
+    version = "ae737ff6fc3db803cd3b33b44a4aacbd7db3c864";
     src = fetchgit {
       url = "https://github.com/puffnfresh/idris-commonmark.git";
       rev = version;
-      sha256 = "09rqsnzdhrrndrdg0liskmdgwk1r6na7jwrhkf0gl2hznylkm2kh";
+      sha256 = "07a3k27bmwrdwvacl7hakvpibkj6342i62mdymjxhg4lvfss2l6k";
     };
     buildInputs = [ re2c ];
     buildDepends = [ ];
