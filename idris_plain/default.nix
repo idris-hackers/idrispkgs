@@ -12,8 +12,8 @@ cabal.mkDerivation (self: {
   src = fetchFromGitHub {
     owner = "puffnfresh";
     repo = "Idris-dev";
-    rev = "27e4266df1532cce701e1179e51dbd9cf056b67a";
-    sha256 = "1zmdc75s24521p8np1h6rv9dq5fdjxyabs9x1pifmwwd4bqf9rwq";
+    rev = "e13e48d7d440518ee4173a2f93b040dd76b27d91";
+    sha256 = "07jm9dvxwihkwc5z0kvfnkq91dj0ylm4j2c4fb5fqbzydf1sxbkh";
   };
   enableSharedExecutables = false;
   version = "0.9.16";
