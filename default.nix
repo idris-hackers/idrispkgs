@@ -65,6 +65,17 @@ rec {
     };
     buildDepends = [ lightyear ];
   };
+  idris-posix = mkDerivation rec {
+    pname = "posix";
+    version = "7cb6ca233da9be2efa293395ab7c61b1731f0e2a";
+    src = fetchFromGitHub {
+      owner = "idris-hackers";
+      repo = "idris-posix";
+      rev = version;
+      sha256 = "1a7mbmkkmf0a35m3c8glinzm4p4p3f4z4c7kyggsyn7636a9mfr3";
+    };
+    buildDepends = [ ];
+  };
   quantities = mkDerivation rec {
     pname = "quantities";
     version = "f0e3cbb010843c7c46768953328579c7e62330be";
