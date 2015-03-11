@@ -67,12 +67,12 @@ rec {
   };
   idris-posix = mkDerivation rec {
     pname = "posix";
-    version = "7cb6ca233da9be2efa293395ab7c61b1731f0e2a";
+    version = "18e1badad2d084186e0cd418cc3b01cd5a72000b";
     src = fetchFromGitHub {
       owner = "idris-hackers";
       repo = "idris-posix";
       rev = version;
-      sha256 = "1a7mbmkkmf0a35m3c8glinzm4p4p3f4z4c7kyggsyn7636a9mfr3";
+      sha256 = "0k8lzm767swcm3hp4fgi644bjbb4lx9q2llpf9gjdp7qbdrk2ysf";
     };
     buildDepends = [ ];
   };
