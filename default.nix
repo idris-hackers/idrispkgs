@@ -65,6 +65,17 @@ rec {
     };
     buildDepends = [ lightyear ];
   };
+  idris-lens = mkDerivation rec {
+    pname = "lens";
+    version = "3897a3a671b5622c79eea680f1b2261da4c53c22";
+    src = fetchFromGitHub {
+      owner = "idris-hackers";
+      repo = "idris-lens";
+      rev = version;
+      sha256 = "13zifzdj1z4yaz8kxcnxrpls86ryh7nwr0rrvd570cqfqgdhnxj7";
+    };
+    buildDepends = [ ];
+  };
   idris-posix = mkDerivation rec {
     pname = "posix";
     version = "18e1badad2d084186e0cd418cc3b01cd5a72000b";
