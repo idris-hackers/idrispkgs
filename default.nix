@@ -34,12 +34,12 @@ rec {
 
   lightyear = mkDerivation rec {
     pname = "lightyear";
-    version = "e0b3e883f833c1114effc837a086b0ab9c6c44eb";
+    version = "496c0d8e08213d6f9b6005d41e4bf5a5cf8b0a8e";
     src = fetchFromGitHub {
       owner = "jfdm";
       repo = "lightyear";
       rev = version;
-      sha256 = "1636xzzvd84p7s9b6ikd6pl122v8sb7z8ivn42546px8763l0rkw";
+      sha256 = "0k84i336r9z2a2ikcsrm49k5rwbi57y46si8jvj194rhyjpsxzf1";
     };
     buildDepends = [];
   };
@@ -56,12 +56,12 @@ rec {
   };
   idris-config = mkDerivation rec {
     pname = "config";
-    version = "763567ad095f720fb905ff2aa4598470ef2b741b";
+    version = "ce53685e4a5db7618946f81a945f3bd73b7cccee";
     src = fetchFromGitHub {
       owner = "jfdm";
       repo = "idris-config";
       rev = version;
-      sha256 = "1sa0wrkm769sw25vqq7b3xnrq6irzr9387hhh4dlfjn1kg03nah5";
+      sha256 = "00rzp2adh6s6ra5p7vz91afn6ax2hzx84q1d72vi9mj4d5wxy8hj";
     };
     buildDepends = [ lightyear ];
   };
