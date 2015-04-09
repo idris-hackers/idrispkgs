@@ -1,8 +1,8 @@
 { cabal, annotatedWlPprint, ansiTerminal, ansiWlPprint
 , base64Bytestring, binary, blazeHtml, blazeMarkup, boehmgc
 , cheapskate, deepseq, filepath, fingertree, gmp, happy, haskeline
-, lens, libffi, mtl, network, optparseApplicative, parsers, split
-, text, time, transformers, trifecta, unorderedContainers
+, lens, libffi, mtl, network, optparseApplicative, parsers, safe
+, split, text, time, transformers, trifecta, unorderedContainers
 , utf8String, vector, vectorBinaryInstances, xml, zlib
 , fetchFromGitHub
 }:
@@ -12,19 +12,19 @@ cabal.mkDerivation (self: {
   src = fetchFromGitHub {
     owner = "puffnfresh";
     repo = "Idris-dev";
-    rev = "e13e48d7d440518ee4173a2f93b040dd76b27d91";
-    sha256 = "07jm9dvxwihkwc5z0kvfnkq91dj0ylm4j2c4fb5fqbzydf1sxbkh";
+    rev = "dd5bd6f6643aac20dd1d872a49e1e02ba2873721";
+    sha256 = "1ilbdyyv8xvxdmawlx3jn2wvb44b97lr3ns9czqz1dw5jd23g97m";
   };
   enableSharedExecutables = false;
-  version = "0.9.16";
+  version = "0.9.17";
   isLibrary = true;
   isExecutable = true;
   buildDepends = [
     annotatedWlPprint ansiTerminal ansiWlPprint base64Bytestring binary
     blazeHtml blazeMarkup cheapskate deepseq filepath fingertree
-    haskeline lens libffi mtl network optparseApplicative parsers split
-    text time transformers trifecta unorderedContainers utf8String
-    vector vectorBinaryInstances xml zlib
+    haskeline lens libffi mtl network optparseApplicative parsers safe
+    split text time transformers trifecta unorderedContainers
+    utf8String vector vectorBinaryInstances xml zlib
   ];
   buildTools = [ happy ];
   extraLibraries = [ boehmgc gmp ];
